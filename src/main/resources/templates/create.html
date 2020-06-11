@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Egzaminas Java</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    https://www.bootstrapcdn.com/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h3>Naujo darbuotojo įtraukimas</h3>
+            <form method="post">
+                <table class="table">
+                    <tbody>
+                    <tr>
+                        <th scope="row">Vardas</th>
+                        <td>
+                            <input type="text" name="vardas" class="form-control" placeholder="Vardas">
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th scope="row">Pavardė</th>
+                        <td>
+                            <input type="text" name="pavarde" class="form-control" placeholder="Pavardė">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Gimimo metai</th>
+                        <td>
+                            <input type="text" name="gimimoMetai" class="form-control" placeholder="Gimimo metai">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Pareigos</th>
+                        <td>
+                            <input type="text" name="pareigos" class="form-control" placeholder="Pareigos">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Skyrius</th>
+                        <td>
+                            <input type="text" name="skyrius" class="form-control" placeholder="Skyrius">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>
+                            <button class="btn btn-success" type="submit">Išsaugoti</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </section>
+
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+
+</main>
+</body>
+
+</html>

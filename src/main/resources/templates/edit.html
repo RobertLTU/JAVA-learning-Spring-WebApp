@@ -1,0 +1,135 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Egzaminas Java</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    https://www.bootstrapcdn.com/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h3>Koregavimas</h3>
+            <!--            ======================================================================= -->
+            <!--            HORIZONTALUS lenteles variantas -->
+            <!--            ======================================================================= -->
+            <!--            <table class="table">-->
+            <!--                <thead class="thead-dark">-->
+            <!--                <tr>-->
+            <!--                    <th scope="col">Id</th>-->
+            <!--                    <th scope="col">Vardas</th>-->
+            <!--                    <th scope="col">Pavardė</th>-->
+            <!--                    <th scope="col">Gimimo metai</th>-->
+            <!--                    <th scope="col">Pareigos</th>-->
+            <!--                    <th scope="col">Skyrius</th>-->
+            <!--                    <th scope="col">Išsaugoti</th>-->
+            <!--                </tr>-->
+            <!--                </thead>-->
+
+            <!--                <tbody>-->
+            <!--                <tr th:each="element : ${darbuotojas}">-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.id}" readonly>-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.vardas}">-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.pavarde}">-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.gimimoMetai}">-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.pareigos}">-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <input type="text" class="form-control" th:value="${element.skyrius}">-->
+            <!--                    </td>-->
+            <!--                    <td>-->
+            <!--                        <form th:action="'/main/' + ${element.id} + '/edit'" method="post">-->
+            <!--                            <button class="btn btn-success" type="submit">Išsaugoti</button>-->
+            <!--                        </form>-->
+            <!--                    </td>-->
+            <!--                </tr>-->
+            <!--                </tbody>-->
+            <!--            </table>-->
+
+            <!--            ======================================================================= -->
+            <!--            VERTIKALUS lenteles variantas -->
+            <!--            ======================================================================= -->
+            <form method="post">
+                <table class="table">
+<!--                    <thead class="thead-dark">-->
+<!--                    <tr>-->
+<!--                        <th scope="column">Parametras</th>-->
+<!--                        <th scope="column">Reikšmė</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+
+                    <tbody>
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">ID</th>
+                        <td>
+                            <input type="text" class="form-control" th:value="${element.id}" readonly>
+                        </td>
+
+                    </tr>
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">Vardas</th>
+                        <td>
+                            <input type="text" name="vardas" class="form-control" th:value="${element.vardas}">
+                        </td>
+                    </tr>
+
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">Pavardė</th>
+                        <td>
+                            <input type="text" name="pavarde" class="form-control" th:value="${element.pavarde}">
+                        </td>
+                    </tr>
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">Gimimo metai</th>
+                        <td>
+                            <input type="text" name="gimimoMetai" class="form-control"
+                                   th:value="${element.gimimoMetai}">
+                        </td>
+                    </tr>
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">Pareigos</th>
+                        <td>
+                            <input type="text" name="pareigos" class="form-control" th:value="${element.pareigos}">
+                        </td>
+                    </tr>
+                    <tr th:each="element : ${darbuotojas}">
+                        <th scope="row">Skyrius</th>
+                        <td>
+                            <input type="text" name="skyrius" class="form-control" th:value="${element.skyrius}">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row"></th>
+                        <td>
+                            <button class="btn btn-success" type="submit">Išsaugoti</button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </form>
+        </div>
+    </section>
+
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+
+</main>
+</body>
+
+</html>

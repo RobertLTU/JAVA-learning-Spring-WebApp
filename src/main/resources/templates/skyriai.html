@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Egzaminas Java</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    https://www.bootstrapcdn.com/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Skyriaus pavadinimas</th>
+                    <th scope="col">Darbuotojų skaičius</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="xxx : ${skyriai}">
+                    <td th:text="${xxx.id}"/>
+                    <td th:text="${xxx.vardas}"/>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+
+</main>
+</body>
+
+</html>

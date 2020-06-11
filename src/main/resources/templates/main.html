@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Egzaminas Java</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!--    https://www.bootstrapcdn.com/-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"/>
+</head>
+
+<body>
+
+<header th:insert="blocks/header :: header"></header>
+
+<main role="main">
+
+    <section class="jumbotron text-center">
+        <div class="container">
+            <h3>Visi darbuotojai</h3>
+            <a href="/create" class="btn btn-success">Pridėti naują</a><br><br>
+
+            <table class="table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Vardas</th>
+                    <th scope="col">Pavardė</th>
+                    <th scope="col">Gimimo metai</th>
+                    <th scope="col">Pareigos</th>
+                    <th scope="col">Skyrius</th>
+                    <th scope="col">Taisyti</th>
+                    <th scope="col">Išrinti</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr th:each="xxx : ${darbuotojai}">
+                    <td th:text="${xxx.id}"/>
+                    <td th:text="${xxx.vardas}"/>
+                    <td th:text="${xxx.pavarde}"/>
+                    <td th:text="${xxx.gimimoMetai}"/>
+                    <td th:text="${xxx.pareigos}"/>
+                    <td th:text="${xxx.skyrius}"/>
+                    <td>
+                        <a th:href="${xxx.id} + '/edit'" class="btn btn-warning">Taisyti</a>
+                    </td>
+                    <td>
+                        <form th:action="'/main/' + ${xxx.id} + '/remove'" method="post">
+                            <button class="btn btn-danger" type="submit">Ištrinti</button>
+                        </form>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+
+    <footer th:insert="blocks/footer :: footer"></footer>
+
+</main>
+</body>
+
+</html>
